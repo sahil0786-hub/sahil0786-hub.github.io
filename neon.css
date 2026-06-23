@@ -16,6 +16,7 @@ body {
   background-repeat: no-repeat;
   backface-visibility: transparant;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -109,7 +110,7 @@ body {
   /* url('img1.jpg'); */
   background-image: url("hero.png");
   background-blend-mode: lighten;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   display: flex;
   align-items: center;
@@ -412,14 +413,6 @@ h3 {
   color: #999;
 }
 
-@media (max-width: 600px) {
-  .team_cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
 .footer {
   background: radial-gradient(black, rgb(9, 22, 22));
   color: #a1a1aa;
@@ -489,38 +482,104 @@ h3 {
   font-weight: bold;
 }
 
-/* Mobile Responsive Fix */
+/* ===== COMPLETE MOBILE FIX ===== */
 @media only screen and (max-width: 768px) {
-  /* Hero section mobile ke liye */
-  .hero-section, .hero-banner {
-    height: auto !important;
-    padding: 40px 20px !important;
-    background-position: center !important;
-    background-size: cover !important;
+  /* 1. Body ka horizontal scroll band karo */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
   }
 
-  /* Hero ke andar ka text center me laao */
-  .hero-content, .hero-text {
+  /* 2. Navbar ka -240px fix */
+  .name {
+    margin-left: 0 !important;
+    font-size: 20px !important;
+  }
+  
+  .navbar {
+    padding: 15px !important;
+    height: auto !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .nav-links {
     width: 100% !important;
-    text-align: center !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    padding: 10px 0 !important;
+  }
+
+  /* 3. Hero section full width */
+  .hero {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 50vh !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    padding: 40px 15px !important;
+  }
+
+  /* 4. Saare cards ka width fix */
+  .card, .card2, .card3, .pro-card {
+    width: 90% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .card2 img {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover !important;
+  }
+
+  /* 5. Containers center me laao */
+  .inv-container, .cards, .gallery-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 25px !important;
+    padding: 0 15px !important;
+  }
+
+  /* 6. Gallery images full width */
+  .gallery {
+    margin: 20px 0 !important;
     padding: 0 !important;
   }
 
-  /* Image ko crop hone se bachaao */
-  .hero-section img, .hero-banner img {
+  .gallery-container img {
     width: 100% !important;
     height: auto !important;
-    object-fit: contain !important;
+    margin: 0 !important;
   }
 
-  /* Navbar mobile pe theek karo */
-  nav ul {
+  /* 7. Team cards center */
+  .team_card {
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+
+  .team_card img {
+    width: 100% !important;
+  }
+
+  /* 8. Footer ek column me */
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    padding: 20px 15px !important;
+    text-align: center !important;
+  }
+
+  /* 9. Buttons full width */
+  .hero-buttons {
     flex-direction: column !important;
-    gap: 10px !important;
+    width: 100% !important;
   }
   
-  /* Cards 3 ki jagah 1-1 karke dikhao */
-  .inventory-cards, .games-grid {
-    grid-template-columns: 1fr !important;
+  .explore-btn, .plan-btn, .join-btn {
+    width: 100% !important;
+    max-width: 300px !important;
   }
 }
