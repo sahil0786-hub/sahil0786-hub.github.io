@@ -488,3 +488,39 @@ h3 {
   margin: 0 5px;
   font-weight: bold;
 }
+
+/* Mobile Responsive Fix */
+@media only screen and (max-width: 768px) {
+  /* Hero section mobile ke liye */
+  .hero-section, .hero-banner {
+    height: auto !important;
+    padding: 40px 20px !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  /* Hero ke andar ka text center me laao */
+  .hero-content, .hero-text {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  /* Image ko crop hone se bachaao */
+  .hero-section img, .hero-banner img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Navbar mobile pe theek karo */
+  nav ul {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  /* Cards 3 ki jagah 1-1 karke dikhao */
+  .inventory-cards, .games-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
